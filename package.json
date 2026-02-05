@@ -20,7 +20,7 @@
   "homepage": "https://github.com/WeAreOnCare/reactive-elements",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PixelsCommander/ReactiveElements.git"
+    "url": "git+https://github.com/WeAreOnCare/ReactiveElements.git"
   },
   "keywords": [
     "react",
@@ -73,12 +73,17 @@
     {
       "name": "Jack Franklin",
       "email": "jack@jackfranklin.net"
+    },
+    {
+      "name": "Nick Heriana-Keers",
+      "url": "https://github.com/nickkeers",
+      "email": "nick@weareoncare.com"
     }
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PixelsCommander/ReactiveElements/issues",
-    "email": "denis.radin@gmail.com"
+    "url": "https://github.com/WeAreOnCare/ReactiveElements/issues",
+    "email": "tech@weareoncare.com"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
