@@ -42,7 +42,7 @@ jobs:
           script: |
             const fs = require('fs');
             const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
-            const tag = `v${pkg.version}`;
+            const tag = `${pkg.version}`;
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const sha = context.sha;

@@ -1,6 +1,6 @@
 {
   "name": "@weareoncare/reactive-elements",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Allows to use React.js component as custom element",
   "main": "dist/reactive-elements.cjs.js",
   "module": "dist/reactive-elements.esm.js",
@@ -20,7 +20,7 @@
   "homepage": "https://github.com/WeAreOnCare/reactive-elements",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WeAreOnCare/ReactiveElements.git"
+    "url": "git+https://github.com/WeAreOnCare/reactive-elements.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
