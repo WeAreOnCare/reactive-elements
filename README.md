@@ -1,7 +1,3 @@
-<a href="http://pixelscommander.com/polygon/reactive-elements/example/#.U0LMA62Sy7o">
-    <img alt="Reactive Elements" src="http://pixelscommander.com/polygon/reactive-elements/assets/logo-reactive-elements-small.png"/>
-</a>
-
 # Convert React.js components into Web Components
 
 ```sh
@@ -15,7 +11,7 @@ yarn add reactive-elements
 
 ```html
 <body>
-	<my-react-component items="{window.someArray}"></my-react-component>
+	<my-react-component items='{{"values": ["one", "two"]}}'></my-react-component>
 </body>
 ```
 
@@ -24,7 +20,7 @@ yarn add reactive-elements
 ```js
 /* @jsx React.DOM */
 MyComponent = React.createClass({
-  render: function() {
+  render: function () {
     console.log(this.props.items); // passed as HTML tag`s argument
     console.log(this.props.children); // original tag children
     return (
@@ -66,7 +62,9 @@ Here, `this.props.isLoggedIn === true` within the React component.
 If you don't want this behaviour you can disable it with a special attribute:
 
 ```html
-<my-react-component is-logged-in="true" reactive-elements-no-boolean-transform>Hello world</my-react-component>
+<my-react-component is-logged-in="true" reactive-elements-no-boolean-transform
+  >Hello world</my-react-component
+>
 ```
 
 ## Exposing components methods on custom element

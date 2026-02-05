@@ -1,20 +1,13 @@
-var ReactiveElements = require('../dist/reactive-elements');
-
 describe('utils', function() {
-  window.items = {
-    city: 'Amsterdam',
-    weather: 'rainy',
-  };
-
   describe('.parseAttributeValue', function() {
     it('should map 5 attribute to 5', function() {
       expect(ReactiveElements.utils.parseAttributeValue('5')).toEqual('5');
     });
 
-    it('should convert {window.items} attribute to pointer', function() {
+    it('should keep single-brace attributes as strings', function() {
       expect(
         ReactiveElements.utils.parseAttributeValue('{window.items}')
-      ).toEqual(window.items);
+      ).toEqual('{window.items}');
     });
 
     it('should convert JSON object literal string to JSON object', function() {

@@ -79,7 +79,7 @@ exports.getterSetter = function(
 exports.attributeNameToPropertyName = function(attributeName) {
   return attributeName
     .replace(/^(x|data)[-_:]/i, '')
-    .replace(/[-_:](.)/g, function(x, chr) {
+    .replace(/[-_:](.)/g, function (x, chr) {
       return chr.toUpperCase();
     });
 };
@@ -96,17 +96,13 @@ exports.parseAttributeValue = function(value, transformOptions) {
   // Support attribute values with newlines
   value = value.replace(/[\n\r]/g, '');
 
-  var pointerRegexp = /^{.*?}$/i,
-    jsonRegexp = /^{{2}.*}{2}$/,
+  var jsonRegexp = /^{{2}.*}{2}$/,
     jsonArrayRegexp = /^{\[.*\]}$/;
 
-  var pointerMatches = value.match(pointerRegexp),
-    jsonMatches = value.match(jsonRegexp) || value.match(jsonArrayRegexp);
+  var jsonMatches = value.match(jsonRegexp) || value.match(jsonArrayRegexp);
 
   if (jsonMatches) {
     value = JSON.parse(jsonMatches[0].replace(/^{|}$/g, ''));
-  } else if (pointerMatches) {
-    value = eval(pointerMatches[0].replace(/[{}]/g, ''));
   } else if (
     (value === 'true' || value === 'false') &&
     !transformOptions.noBooleanTransforms

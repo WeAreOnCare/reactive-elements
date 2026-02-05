@@ -12,7 +12,7 @@ var testFiles = [
   'test/*.spec.js',
 ];
 
-gulp.task('test', function() {
+gulp.task('test', function () {
   // Be sure to return the stream
   return gulp
     .src(testFiles)
@@ -22,13 +22,13 @@ gulp.task('test', function() {
         action: 'run',
       })
     )
-    .on('error', function(err) {
+    .on('error', function (err) {
       // Make sure failed tests cause gulp to exit non-zero
       throw err;
     });
 });
 
-gulp.task('default', function() {
+gulp.task('default', function () {
   gulp
     .src('src/reactive-elements.js')
     .pipe(
@@ -43,8 +43,5 @@ gulp.task('default', function() {
     .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('dist'));
 
-  gulp
-    .src('demo/jsx/*.jsx')
-    .pipe(react())
-    .pipe(gulp.dest('demo/dist'));
+  gulp.src('demo/jsx/*.jsx').pipe(react()).pipe(gulp.dest('demo/dist'));
 });

@@ -42,10 +42,10 @@
         utils.getterSetter(
           this,
           'props',
-          function() {
+          function () {
             return reactElement.props;
           },
-          function(props) {
+          function (props) {
             reactElement = create(this, props);
           }
         );
